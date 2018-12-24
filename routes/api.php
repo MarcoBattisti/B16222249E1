@@ -3,6 +3,8 @@
 use Illuminate\Http\Request;
 Use App\NavbarItem;
 Use App\CarouselItem;
+Use App\Post;
+Use App\WorkOffices;
 
 /*
 |--------------------------------------------------------------------------
@@ -29,5 +31,17 @@ Route::get('home/carousel-items', function() {
     // If the Content-Type and Accept headers are set to 'application/json',
     // this will return a JSON structure. This will be cleaned up later.
     return CarouselItem::all();
+});
+
+Route::get('news/posts', function() {
+    // If the Content-Type and Accept headers are set to 'application/json',
+    // this will return a JSON structure. This will be cleaned up later.
+    return Post::all();
+});
+
+Route::get('common/work-offices', function() {
+    // If the Content-Type and Accept headers are set to 'application/json',
+    // this will return a JSON structure. This will be cleaned up later.
+    return WorkOffices::all();
 });
 

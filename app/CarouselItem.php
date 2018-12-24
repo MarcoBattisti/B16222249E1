@@ -13,7 +13,10 @@ class CarouselItem extends Model
      *
      * @var array
      */
-    protected $fillable = [
-        'id', 'backgroundLink', 'body', 'author',
+    protected $maps =[
+        'id' => 'id',
+        'backgroundLink' => 'background_link',
+        'body' => 'body',
+        'author' => 'author',
     ];
 }

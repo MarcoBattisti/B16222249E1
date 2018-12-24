@@ -18,3 +18,5 @@ Route::get('/', function () {
 Route::options('/{path}', function(){ 
 	return '';
 })->where('path', '.*');
+
+Route::post('/send/email', 'EmailController@mail');
