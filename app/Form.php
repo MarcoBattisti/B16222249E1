@@ -11,6 +11,8 @@ class Form extends Model
     private $subject;
     private $body;
     private $sendCopy;
+    private $secret;
+    private $response;
 
     /**
      * Form constructor.

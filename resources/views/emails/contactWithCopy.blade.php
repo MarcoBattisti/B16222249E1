@@ -505,6 +505,67 @@
                                         </div>
                                         <!--[if mso]></td></tr></table><![endif]-->
                                     </div>
+									
+									<div style="margin-left: 2vw; margin-right: 2vw;">
+										<hr style="border-top: 1px dotted;">
+									</div>
+									
+									<div class="">
+                                        <!--[if mso]>
+                                        <table width="100%" cellpadding="0" cellspacing="0" border="0">
+                                            <tr>
+                                                <td style="padding-right: 10px; padding-left: 10px; padding-top: 20px; padding-bottom: 10px;">
+                                        <![endif]-->
+                                        <div
+                                            style="color:#0D0D0D;font-family:'Montserrat', 'Trebuchet MS', 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Tahoma, sans-serif;line-height:150%; padding-right: 10px; padding-left: 10px; padding-top: 20px; padding-bottom: 10px;">
+                                            <div
+                                                style="font-size:12px;line-height:18px;color:#0D0D0D;font-family:'Montserrat', 'Trebuchet MS', 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Tahoma, sans-serif;text-align:left;">
+                                                <p style="margin: 0;font-size: 14px;line-height: 21px;text-align: center">
+                                                    <span style="font-size: 20px; line-height: 30px;">Di seguito il riepilogo dell'email inviata: </span>
+                                                </p>
+											</div>
+                                        </div>
+										<div
+                                            style="color:#0D0D0D;font-family:'Montserrat', 'Trebuchet MS', 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Tahoma, sans-serif;line-height:150%; padding-right: 10px; padding-left: 10px; padding-top: 20px; padding-bottom: 10px;">
+                                            <div
+                                                style="font-size:12px;line-height:18px;color:#0D0D0D;font-family:'Montserrat', 'Trebuchet MS', 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Tahoma, sans-serif;text-align:left;">
+                                                <p style="margin: 0;font-size: 14px;line-height: 21px;text-align: center">
+                                                    <span style="font-size: 20px; line-height: 30px;">Da: {{ $form->getEmail() }}</span>
+                                                </p>
+											</div>
+                                        </div>
+										<div
+                                            style="color:#0D0D0D;font-family:'Montserrat', 'Trebuchet MS', 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Tahoma, sans-serif;line-height:150%; padding-right: 10px; padding-left: 10px; padding-top: 20px; padding-bottom: 10px;">
+                                            <div
+                                                style="font-size:12px;line-height:18px;color:#0D0D0D;font-family:'Montserrat', 'Trebuchet MS', 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Tahoma, sans-serif;text-align:left;">
+                                                <p style="margin: 0;font-size: 14px;line-height: 21px;text-align: center">
+                                                    <span style="font-size: 20px; line-height: 30px;">A: {{env('MAIL_USERNAME')}}</span>
+                                                </p>
+											</div>
+                                        </div>
+										<div
+                                            style="color:#0D0D0D;font-family:'Montserrat', 'Trebuchet MS', 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Tahoma, sans-serif;line-height:150%; padding-right: 10px; padding-left: 10px; padding-top: 20px; padding-bottom: 10px;">
+                                            <div
+                                                style="font-size:12px;line-height:18px;color:#0D0D0D;font-family:'Montserrat', 'Trebuchet MS', 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Tahoma, sans-serif;text-align:left;">
+                                                <p style="margin: 0;font-size: 14px;line-height: 21px;text-align: center">
+                                                    <span style="font-size: 20px; line-height: 30px;">Oggetto:  {{ $form->getSubject() }}</span>
+                                                </p>
+											</div>
+                                        </div>
+										<div
+                                            style="color:#0D0D0D;font-family:'Montserrat', 'Trebuchet MS', 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Tahoma, sans-serif;line-height:150%; padding-right: 10px; padding-left: 10px; padding-top: 20px; padding-bottom: 10px;">
+                                            <div
+                                                style="font-size:12px;line-height:18px;color:#0D0D0D;font-family:'Montserrat', 'Trebuchet MS', 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Tahoma, sans-serif;text-align:left;">
+                                                <p style="margin: 0;font-size: 14px;line-height: 21px;text-align: center">
+                                                    <span style="font-size: 20px; line-height: 30px;">Messaggio: </span><br>
+                                                </p>
+												<p style="margin: 0;font-size: 14px;line-height: 21px;text-align: center">
+                                                    <span style="font-size: 20px; line-height: 30px;">{{ $form->getBody() }}</span><br>
+                                                </p>
+											</div>
+                                        </div>
+                                        <!--[if mso]></td></tr></table><![endif]-->
+                                    </div>
 
 
                                     <table border="0" cellpadding="0" cellspacing="0" width="100%" class="divider "

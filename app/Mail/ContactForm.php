@@ -2,6 +2,7 @@
 
 namespace App\Mail;
 
+use Illuminate\Support\Facades\Log;
 use Illuminate\Bus\Queueable;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
@@ -31,8 +32,16 @@ class ContactForm extends Mailable
      */
     public function build()
     {
-			return $this->from(env('MAIL_USERNAME'), $this->form->getName())
+        if($this->form->getSendCopy() == false){
+            Log::info('Trying to send the email without the copy of the message!');
+			return $this->from(env('MAIL_USERNAME'), env('MAIL_USERNAME'))
                     ->subject($this->form->getSubject())
                     ->view('emails.contact');
+        }else{
+            Log::info('Trying to send the email with the copy of the message!');
+			return $this->from(env('MAIL_USERNAME'), env('MAIL_USERNAME'))
+                    ->subject($this->form->getSubject())
+                    ->view('emails.contactWithCopy');
+        }
     }
 }
