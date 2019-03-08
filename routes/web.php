@@ -20,3 +20,5 @@ Route::options('/{path}', function(){
 })->where('path', '.*');
 
 Route::post('/send/email', 'EmailController@mail');
+
+Route::get('/home', 'HomeController@index')->name('home');
