@@ -26,10 +26,13 @@ Route::group(['middleware' => 'auth.jwt'], function () {
     Route::get('logout', 'ApiController@logout');
 
     Route::get('user', 'ApiController@getAuthUser');
+
+    Route::get('stats/users-online', 'ClickyController@usersOnline');
+
+    Route::get('stats/time-average', 'ClickyController@timeAverage');
 });
 
 Route::get('home/navbar-items', function() {
-    \Illuminate\Support\Facades\Log::info('In home/navbar-items route!');
     return NavbarItem::all();
 });
 
@@ -80,4 +83,3 @@ Route::get('about-my-work/services', function() {
 Route::get('common/work-offices', function() {
     return WorkOffices::all();
 });
-
