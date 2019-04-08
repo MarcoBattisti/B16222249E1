@@ -83,3 +83,8 @@ Route::get('about-my-work/services', function() {
 Route::get('common/work-offices', function() {
     return WorkOffices::all();
 });
+
+Route::get('settings/personal/stats', 'PersonalStatsController@getAll');
+
+Route::get('settings/{section}', ['uses' =>'SettingsController@getSettingsBySection']);
+

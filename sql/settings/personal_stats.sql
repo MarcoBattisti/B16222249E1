@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Creato il: Nov 24, 2018 alle 17:11
+-- Creato il: Apr 08, 2019 alle 19:33
 -- Versione del server: 5.7.23
 -- Versione PHP: 7.2.10
 
@@ -19,33 +19,34 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `homepage`
+-- Database: `laravel`
 --
 
 -- --------------------------------------------------------
 
 --
--- Struttura della tabella `navbar_items`
+-- Struttura della tabella `personal_stats`
 --
 
-DROP TABLE IF EXISTS `navbar_items`;
-CREATE TABLE IF NOT EXISTS `navbar_items` (
+DROP TABLE IF EXISTS `personal_stats`;
+CREATE TABLE IF NOT EXISTS `personal_stats` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `name` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
-  `path` varchar(50) COLLATE utf8_unicode_ci DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+  `name` varchar(15) NOT NULL,
+  `value` varchar(100) NOT NULL,
+  PRIMARY KEY (`id`) USING BTREE,
+  KEY `name` (`name`),
+  KEY `value` (`value`)
+) ENGINE=MyISAM AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
 
 --
--- Dump dei dati per la tabella `navbar_items`
+-- Dump dei dati per la tabella `personal_stats`
 --
 
-INSERT INTO `navbar_items` (`id`, `name`, `path`) VALUES
-(1, 'Home', NULL),
-(2, 'News', NULL),
-(3, 'Chi sono', 'about-me'),
-(4, 'Di cosa mi occupo', 'about-my-work'),
-(5, 'Contatti', 'contacts');
+INSERT INTO `personal_stats` (`id`, `name`, `value`) VALUES
+(1, 'clienti', '+20%'),
+(2, 'sedi', '2'),
+(3, 'progetti', '+40%'),
+(4, 'lauree, master', '4');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
