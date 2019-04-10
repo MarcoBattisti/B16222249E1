@@ -76,6 +76,8 @@ Route::get('about-me/latest-introduction', function() {
     return Introductions::find($latestIntroductionById);
 });
 
+Route::get('about-my-work/introduction-informations', 'IntroductionInformationsController@getAll');
+
 Route::get('about-my-work/services', function() {
     return Service::all();
 });
