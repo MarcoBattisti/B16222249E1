@@ -27,9 +27,10 @@ Route::group(['middleware' => 'auth.jwt'], function () {
 
     Route::get('user', 'ApiController@getAuthUser');
 
-    Route::get('stats/users-online', 'ClickyController@usersOnline');
+    Route::get('stats/users-online', 'AnalyticsController@usersOnline');
+    Route::get('stats/time-average', 'AnalyticsController@timeAverage');
+    Route::get('stats/visitors', 'AnalyticsController@fetchVisitors');
 
-    Route::get('stats/time-average', 'ClickyController@timeAverage');
 });
 
 Route::get('home/navbar-items', function() {
