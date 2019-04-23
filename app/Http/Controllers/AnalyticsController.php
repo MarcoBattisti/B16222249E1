@@ -50,4 +50,26 @@ class AnalyticsController extends Controller
             ];
         });
     }
+
+    public function fetchMostVisitedPages()
+    {
+        $response = Analytics::performQuery(
+            Period::months(6),
+            'ga:pageviews',
+            [
+                'dimensions' => 'ga:pagePath,ga:pageTitle',
+                'sort' => '-ga:pageviews',
+                'max-results' => 10,
+            ]
+        );
+
+        return collect($response['rows'] ?? [])
+            ->map(function (array $pageRow) {
+                return [
+                    'url' => $pageRow[0],
+                    'pageTitle' => $pageRow[1],
+                    'views' => (int) $pageRow[2],
+                ];
+            });
+    }
 }

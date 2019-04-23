@@ -8,6 +8,8 @@ class settings extends Model
 {
     protected $connection = "dbSettings";
 
+    public $timestamps = false;
+
     /**
      * The attributes that are mass assignable.
      *

@@ -24,15 +24,17 @@ Route::post('register', 'ApiController@register');
 
 Route::group(['middleware' => 'auth.jwt'], function () {
     Route::get('logout', 'ApiController@logout');
-
     Route::get('user', 'ApiController@getAuthUser');
 
     Route::get('stats/users-online', 'AnalyticsController@usersOnline');
     Route::get('stats/time-average', 'AnalyticsController@timeAverage');
     Route::get('stats/visitors', 'AnalyticsController@fetchVisitors');
+    Route::get('stats/most-visited-pages', 'AnalyticsController@fetchMostVisitedPages');
+
+    Route::put('settings/{id}', ['uses' =>'SettingsController@update']);
+    Route::put('settings/personal/stats', 'PersonalStatsController@update');
 
 });
-
 Route::get('home/navbar-items', function() {
     return NavbarItem::all();
 });
@@ -89,5 +91,6 @@ Route::get('common/work-offices', function() {
 
 Route::get('settings/personal/stats', 'PersonalStatsController@getAll');
 
-Route::get('settings/{section}', ['uses' =>'SettingsController@getSettingsBySection']);
+Route::get('settings', 'SettingsController@getSettingsBySection');
+
 
