@@ -3,7 +3,10 @@
 namespace App\Exceptions;
 
 use Exception;
+use Illuminate\Auth\AuthenticationException;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
+use Illuminate\Http\Exceptions\ThrottleRequestsException;
+use Symfony\Component\HttpKernel\Exception\HttpException;
 
 class Handler extends ExceptionHandler
 {
@@ -46,6 +49,22 @@ class Handler extends ExceptionHandler
      */
     public function render($request, Exception $exception)
     {
-        return parent::render($request, $exception);
+        if ($exception instanceof HttpException) {
+            return response()->json([
+                'code' => $exception->getStatusCode(),
+                'message' => $exception->getMessage()
+            ], $exception->getStatusCode());
+        } else {
+            return parent::render($request, $exception);
+        }
+    }
+
+    protected function unauthenticated($request, AuthenticationException $exception)
+    {
+        if ($request->expectsJson()) {
+            return response()->error('Unauthenticated.', 401);
+        }
+
+        return redirect()->guest(route('login'));
     }
 }
