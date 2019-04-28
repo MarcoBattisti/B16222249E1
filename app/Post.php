@@ -8,6 +8,9 @@ class Post extends Model
 {
 	
     protected $connection = "dbNewsPage";
+
+    public $timestamps = false;
+
     /**
      * The attributes that are mass assignable.
      *

@@ -8,6 +8,9 @@ class CarouselItem extends Model
 {
     
     protected $connection = "dbHomePage";
+
+    public $timestamps = false;
+
     /**
      * The attributes that are mass assignable.
      *

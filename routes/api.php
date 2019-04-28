@@ -34,6 +34,14 @@ Route::group(['middleware' => 'auth.jwt'], function () {
     Route::put('settings/{id}', ['uses' =>'SettingsController@update']);
     Route::put('settings/personal/stats', 'PersonalStatsController@update');
 
+    Route::put('home/carousel-items/{id}', ['uses' =>'CarouselItemController@update']);
+    Route::post('home/carousel-items', 'CarouselItemController@create');
+    Route::delete('home/carousel-items/{id}', ['uses' =>'CarouselItemController@delete']);
+
+    Route::post('news/posts', 'PostsController@create');
+    Route::put('news/posts/{id}', ['uses' =>'PostsController@update']);
+    Route::delete('news/posts/{id}', ['uses' =>'PostsController@delete']);
+
 });
 Route::get('home/navbar-items', function() {
     return NavbarItem::all();
@@ -47,16 +55,7 @@ Route::get('news/latest/{num}', function(Request $request, $num) {
     return Post::orderBy('date','desc')->take($num)->get();
 });
 
-Route::get('news/posts', function(Request $request) {
-	if ($request->has('filter')) {
-	   $filters = $request->query('filter');
-       return Post::whereIn('topic', $filters)
-					->orderBy('date', 'desc')
-					->paginate(10);
-	}else{
-	   return Post::orderBy('date', 'desc')->paginate(10);
-	}
-});
+Route::get('news/posts', 'PostsController@getPagedList');
 
 Route::get('news/topics', function() {
     return Post::distinct('topic')->pluck('topic');
