@@ -42,6 +42,10 @@ Route::group(['middleware' => 'auth.jwt'], function () {
     Route::put('news/posts/{id}', ['uses' =>'PostsController@update']);
     Route::delete('news/posts/{id}', ['uses' =>'PostsController@delete']);
 
+    Route::post('common/timeline-events', 'TimelineEventsController@create');
+    Route::put('common/timeline-events/{id}', ['uses' =>'TimelineEventsController@update']);
+    Route::put('common/timeline-events', 'TimelineEventsController@updateAll');
+    Route::delete('common/timeline-events/{id}', ['uses' =>'TimelineEventsController@delete']);
 });
 Route::get('home/navbar-items', function() {
     return NavbarItem::all();
@@ -69,9 +73,7 @@ Route::get('news/{id}', function($id) {
     return Post::findOrFail($id);;
 });
 
-Route::get('common/timeline-events', function() {
-    return TimelineEvents::all();
-});
+Route::get('common/timeline-events', ['uses' =>'TimelineEventsController@findAll']);
 
 Route::get('about-me/latest-introduction', function() {
     $latestIntroductionById = Introductions::max('id');
