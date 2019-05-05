@@ -34,6 +34,18 @@ Route::group(['middleware' => 'auth.jwt'], function () {
     Route::put('settings/{id}', ['uses' =>'SettingsController@update']);
     Route::put('settings/personal/stats', 'PersonalStatsController@update');
 
+    Route::put('home/carousel-items/{id}', ['uses' =>'CarouselItemController@update']);
+    Route::post('home/carousel-items', 'CarouselItemController@create');
+    Route::delete('home/carousel-items/{id}', ['uses' =>'CarouselItemController@delete']);
+
+    Route::post('news/posts', 'PostsController@create');
+    Route::put('news/posts/{id}', ['uses' =>'PostsController@update']);
+    Route::delete('news/posts/{id}', ['uses' =>'PostsController@delete']);
+
+    Route::post('common/timeline-events', 'TimelineEventsController@create');
+    Route::put('common/timeline-events/{id}', ['uses' =>'TimelineEventsController@update']);
+    Route::put('common/timeline-events', 'TimelineEventsController@updateAll');
+    Route::delete('common/timeline-events/{id}', ['uses' =>'TimelineEventsController@delete']);
 
     Route::get('/common/notes', 'NoteController@findAll');
     Route::post('/common/notes', 'NoteController@create');
