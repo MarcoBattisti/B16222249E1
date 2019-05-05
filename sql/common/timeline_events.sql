@@ -36,6 +36,7 @@ CREATE TABLE IF NOT EXISTS `timeline_events` (
   `text` varchar(255) NOT NULL,
   `color` varchar(10) NOT NULL,
   `icon` varchar(30) NOT NULL,
+  `event_order` int(4) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
 
@@ -43,11 +44,11 @@ CREATE TABLE IF NOT EXISTS `timeline_events` (
 -- Dump dei dati per la tabella `timeline_events`
 --
 
-INSERT INTO `timeline_events` (`id`, `year`, `title`, `text`, `color`, `icon`) VALUES
-(1, 0, 'Laurea Triennale', 'Nel 2013 mi sono laureata in Scienze e Tecniche Psicologiche, presso l\'Università degli Studi di Firenze.', '#d9534f', 'fa fa-graduation-cap'),
-(2, 0, 'Laurea Magistrale', 'Nel 2015 ho conseguito la laurea magistrale in Processi di Sviluppo e Tutela dell\'Infanzia, presso l\'Università Cattolica del Sacro Cuore di Milano.', '#3f903f', 'fa fa-graduation-cap'),
-(3, 0, 'Master Post Laurea', 'Nel 2017 mi sono specializzata con un master in Psicodiagnostica Clinica e Forense, Psicologia Giuridica.', '#00009C', 'fa fa-book'),
-(4, 0, 'Psicologa e Psicodiagnosta Clinica e Forense', 'Adesso lavoro come psicologa competente nei processi di promozione delle risorse in bambini, adolescenti e adulti. <br> <a href=\'/about-my-work\'>Clicca qui per saperne di più sulle mie attività..</a>', '#ff9fdf', 'fa fa-briefcase');
+INSERT INTO `timeline_events` (`id`, `year`, `title`, `text`, `color`, `icon`, `event_order`) VALUES
+(1, 0, 'Laurea Triennale', 'Nel 2013 mi sono laureata in Scienze e Tecniche Psicologiche, presso l\'Università degli Studi di Firenze.', '#d9534f', 'fa fa-graduation-cap', 0),
+(2, 0, 'Laurea Magistrale', 'Nel 2015 ho conseguito la laurea magistrale in Processi di Sviluppo e Tutela dell\'Infanzia, presso l\'Università Cattolica del Sacro Cuore di Milano.', '#3f903f', 'fa fa-graduation-cap', 1),
+(3, 0, 'Master Post Laurea', 'Nel 2017 mi sono specializzata con un master in Psicodiagnostica Clinica e Forense, Psicologia Giuridica.', '#00009C', 'fa fa-book', 2),
+(4, 0, 'Psicologa e Psicodiagnosta Clinica e Forense', 'Adesso lavoro come psicologa competente nei processi di promozione delle risorse in bambini, adolescenti e adulti. <br> <a href=\'/about-my-work\'>Clicca qui per saperne di più sulle mie attività..</a>', '#ff9fdf', 'fa fa-briefcase', 3);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

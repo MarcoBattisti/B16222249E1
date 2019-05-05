@@ -42,8 +42,8 @@ CREATE TABLE IF NOT EXISTS `carousel_items` (
 --
 
 INSERT INTO `carousel_items` (`id`, `backgroundLink`, `body`, `author`) VALUES
-(1, 'assets/carousel-image-1.jpg', 'Soltanto una cosa rende impossibile un sogno: la paura di fallire', 'Paulo Coelho'),
-(2, 'assets/carousel-image-2.jpg', 'Fai della tua vita un sogno, e di un sogno, una realtà', 'Antoine-Marie Roger de Saint-Exupery');
+(1, 'https://firebasestorage.googleapis.com/v0/b/lisa-psychology.appspot.com/o/carousel-image-1.jpg?alt=media&token=0b89152f-e88c-4973-b377-d0f02a3aba33', 'Soltanto una cosa rende impossibile un sogno: la paura di fallire', 'Paulo Coelho'),
+(2, 'https://firebasestorage.googleapis.com/v0/b/lisa-psychology.appspot.com/o/carousel-image-2.jpg?alt=media&token=8df62c1e-c105-4f16-aa40-b0570ae2dae0', 'Fai della tua vita un sogno, e di un sogno, una realtà', 'Antoine-Marie Roger de Saint-Exupery');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

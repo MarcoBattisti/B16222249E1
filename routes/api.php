@@ -34,7 +34,13 @@ Route::group(['middleware' => 'auth.jwt'], function () {
     Route::put('settings/{id}', ['uses' =>'SettingsController@update']);
     Route::put('settings/personal/stats', 'PersonalStatsController@update');
 
+
+    Route::get('/common/notes', 'NoteController@findAll');
+    Route::post('/common/notes', 'NoteController@create');
+    Route::put('/common/notes/{id}', ['uses' =>'NoteController@update']);
+    Route::delete('/common/notes/{id}', ['uses' =>'NoteController@delete']);
 });
+
 Route::get('home/navbar-items', function() {
     return NavbarItem::all();
 });
