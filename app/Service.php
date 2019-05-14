@@ -7,6 +7,9 @@ use Illuminate\Database\Eloquent\Model;
 class Service extends Model
 {
     protected $connection = "dbAboutMyWorkPage";
+
+    public $timestamps = false;
+
     /**
      * The attributes that are mass assignable.
      *
@@ -17,5 +20,6 @@ class Service extends Model
         'image',
         'title',
         'text',
+        'event_order'
     ];
 }

@@ -8,6 +8,8 @@ class IntroductionInformations extends Model
 {
     protected $connection = "dbAboutMyWorkPage";
 
+    public $timestamps = false;
+
     /**
      * The attributes that are mass assignable.
      *

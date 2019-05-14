@@ -8,6 +8,9 @@ class WorkOffices extends Model
 {
 
     protected $connection = "dbCommon";
+
+    public $timestamps = false;
+
     /**
      * The attributes that are mass assignable.
      *
@@ -20,7 +23,5 @@ class WorkOffices extends Model
         'city',
         'province',
         'post_code',
-        'phone_number',
-        'email'
     ];
 }

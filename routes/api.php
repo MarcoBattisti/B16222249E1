@@ -47,10 +47,18 @@ Route::group(['middleware' => 'auth.jwt'], function () {
     Route::put('common/timeline-events', 'TimelineEventsController@updateAll');
     Route::delete('common/timeline-events/{id}', ['uses' =>'TimelineEventsController@delete']);
 
-    Route::get('/common/notes', 'NoteController@findAll');
-    Route::post('/common/notes', 'NoteController@create');
-    Route::put('/common/notes/{id}', ['uses' =>'NoteController@update']);
-    Route::delete('/common/notes/{id}', ['uses' =>'NoteController@delete']);
+    Route::get('common/notes', 'NoteController@findAll');
+    Route::post('common/notes', 'NoteController@create');
+    Route::put('common/notes/{id}', ['uses' =>'NoteController@update']);
+    Route::delete('common/notes/{id}', ['uses' =>'NoteController@delete']);
+
+    Route::post('about-my-work/services', 'ServiceController@create');
+    Route::put('about-my-work/services/{id}', ['uses' =>'ServiceController@update']);
+    Route::put('about-my-work/services', 'ServiceController@updateAll');
+    Route::delete('about-my-work/services/{id}', ['uses' =>'ServiceController@delete']);
+
+    Route::post('common/work-offices', 'WorkOfficesController@save');
+    Route::delete('common/work-offices/{id}', ['uses' =>'WorkOfficesController@delete']);
 });
 
 Route::get('home/navbar-items', function() {
@@ -99,13 +107,9 @@ Route::get('about-me/latest-introduction', function() {
 
 Route::get('about-my-work/introduction-informations', 'IntroductionInformationsController@getAll');
 
-Route::get('about-my-work/services', function() {
-    return Service::all();
-});
+Route::get('about-my-work/services', 'ServiceController@getAll');
 
-Route::get('common/work-offices', function() {
-    return WorkOffices::all();
-});
+Route::get('common/work-offices', 'WorkOfficesController@getAll');
 
 Route::get('settings/personal/stats', 'PersonalStatsController@getAll');
 

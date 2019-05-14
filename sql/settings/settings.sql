@@ -52,6 +52,12 @@ INSERT INTO `settings` (`id`, `section`, `name`, `value`) VALUES
 (13, 'contacts', 'bg-image', 'https://firebasestorage.googleapis.com/v0/b/lisa-psychology.appspot.com/o/contacts-page-background.jpg?alt=media&token=05aa0f0d-5801-4a9a-9cb9-c96ba3bf4f17');
 COMMIT;
 
+INSERT INTO `settings` (`id`, `section`, `name`, `value`) VALUES (NULL, 'common', 'logo', 'https://firebasestorage.googleapis.com/v0/b/lisa-psychology.appspot.com/o/Logo1.png?alt=media&token=13f8169d-860e-44d2-9a67-c5bbbc928914');
+
+INSERT INTO `settings` (`id`, `section`, `name`, `value`) VALUES (NULL, 'common', 'facebook-link', 'https://www.facebook.com/battisti.psicologa/'), (NULL, 'common', 'linkedin-link', 'https://www.linkedin.com/in/lisa-battisti-648453a4');
+
+INSERT INTO `settings` (`id`, `section`, `name`, `value`) VALUES (NULL, 'common', 'phone-number', '321654987'), (NULL, 'common', 'email', 'test@test.test');
+
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
