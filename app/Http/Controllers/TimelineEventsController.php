@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 
 class TimelineEventsController extends Controller
 {
-    public function findAll() {
+    public function getAll() {
         return TimelineEvents::orderBy('event_order','asc')->get();
     }
 

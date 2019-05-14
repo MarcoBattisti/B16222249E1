@@ -96,14 +96,12 @@ Route::get('news/{id}', function($id) {
     return Post::findOrFail($id);;
 });
 
-Route::get('common/timeline-events', function() {
-    return TimelineEvents::all();
-});
-
 Route::get('about-me/latest-introduction', function() {
     $latestIntroductionById = Introductions::max('id');
     return Introductions::find($latestIntroductionById);
 });
+
+Route::get('common/timeline-events', 'TimelineEventsController@getAll');
 
 Route::get('about-my-work/introduction-informations', 'IntroductionInformationsController@getAll');
 
